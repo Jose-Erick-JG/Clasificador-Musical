@@ -1,1 +1,0 @@
-La idea es manejar en esta carpeta los controladores del proyecto.
