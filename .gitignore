@@ -6,7 +6,7 @@ requirements.txt
 bin
 db.sqlite3
 .env
-.env.prod
+.env.prodtree
 .env.prod.db
 docker-compose.prod.yml
 Dockerfile.prod
