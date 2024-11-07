@@ -1,2 +1,6 @@
 PyQt6==6.7.1
-librosa == 0.10
+librosa==0.10
+pathlib
+numpy==1.26.4
+matplotlib==3.5.1
+soundfile
