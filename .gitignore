@@ -2,7 +2,6 @@
 .vscode
 .idea
 .python-version
-requirements.txt
 bin
 db.sqlite3
 .env
