@@ -1,10 +1,10 @@
 import os
 import numpy as np
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from keras._tf_keras.keras.preprocessing.image import ImageDataGenerator
 from cnn_model.model import create_cnn_model
 
 # Ruta a los espectrogramas
-data_dir = 'data/spectrograms'
+data_dir = 'dataset/spectrograms'
 
 # Configuración del generador de datos
 datagen = ImageDataGenerator(validation_split=0.2, rescale=1./255)

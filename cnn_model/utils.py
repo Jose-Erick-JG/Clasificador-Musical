@@ -1,5 +1,5 @@
 import os
-from tensorflow.keras.preprocessing.image import load_img, img_to_array
+from keras._tf_keras.keras.preprocessing.image import load_img, img_to_array
 
 def load_image(image_path, target_size=(128, 128)):
     """

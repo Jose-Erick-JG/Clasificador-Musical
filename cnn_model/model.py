@@ -1,5 +1,5 @@
 import tensorflow as tf
-from tensorflow.keras import layers, models
+from keras import layers, models
 
 def create_cnn_model(input_shape=(128, 128, 3), num_classes=3):
     """
