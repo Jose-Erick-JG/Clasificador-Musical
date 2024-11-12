@@ -2,9 +2,9 @@ import os
 from audio_conversion.mel_spectrogram_generator import generate_and_save_mel_spectrogram
 
 # Directorio raíz de los archivos de audio
-audio_base_dir = 'data/raw_audio'
+audio_base_dir = 'dataset/raw_audio'
 # Directorio para guardar los espectrogramas
-save_dir = 'data/spectrograms'
+save_dir = 'dataset/spectrograms'
 # Lista de géneros
 genres = ['clasica', 'jazz', 'pop','rock']
 
