@@ -21,11 +21,11 @@ apps/keenthemes/tools/node_modules
 **/*.pyc
 
 # Ignorar todos los directorios _pycache_
-__pycache__/
-**/migrations/
-apps/*/migrations/
-
-storage/
-postgres_data/
-redis_data/
-postgresql/
+#__pycache__/
+#**/migrations/
+#apps/*/migrations/
+#
+#storage/
+#postgres_data/
+#redis_data/
+#postgresql/

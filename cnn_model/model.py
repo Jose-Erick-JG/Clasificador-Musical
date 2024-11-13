@@ -1,5 +1,5 @@
 import tensorflow as tf
-from tensorflow.keras import layers, models
+from keras import layers, models
 
 def create_cnn_model(input_shape=(128, 128, 3), num_classes=3):
     """
@@ -37,6 +37,7 @@ def create_cnn_model(input_shape=(128, 128, 3), num_classes=3):
     model.add(layers.Dense(512, activation='relu'))
 
     # Capa de salida con 'num_classes' salidas
+    #Genera posibilidades de pertenencia a cada clase!
     model.add(layers.Dense(num_classes, activation='softmax'))
 
     # Compilación del modelo

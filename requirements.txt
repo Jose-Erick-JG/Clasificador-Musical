@@ -5,3 +5,5 @@ pathlib
 numpy==1.26.4
 matplotlib==3.5.1
 soundfile
+tensorflow==2.18.0
+keras==3.6.0
