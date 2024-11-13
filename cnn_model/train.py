@@ -2,6 +2,8 @@ import numpy as np
 from keras._tf_keras.keras.preprocessing.image import ImageDataGenerator
 from cnn_model.model import create_cnn_model
 import os
+import pickle  # Importa pickle para guardar el mapeo de clases
+
 
 
 def train_model(data_dir, input_shape=(128, 128, 3), batch_size=32, epochs=10):
@@ -26,6 +28,11 @@ def train_model(data_dir, input_shape=(128, 128, 3), batch_size=32, epochs=10):
         subset='training'
     )
 
+    # Guardar los índices de las clases
+    with open('class_indices.pkl', 'wb') as f:
+        pickle.dump(train_generator.class_indices, f)
+    print("Archivo class_indices.pkl generado con éxito.")
+
     # Carga de datos de validación
     validation_generator = datagen.flow_from_directory(
         data_dir,
@@ -49,8 +56,6 @@ def train_model(data_dir, input_shape=(128, 128, 3), batch_size=32, epochs=10):
     model.save('cnn_music_genre_classifier.h5')
 
 if __name__ == "__main__":
-    #base_dir = os.path.dirname(os.path.abspath(__file__))  # Obtiene la ruta de la carpeta actual
-    # Asegúrate de que esta sea la ruta correcta:
     base_dir = 'C:\\Users\\Usuario\\Documents\\GitHub\\Clasificador-Musical'
     data_dir = os.path.join(base_dir, 'dataset', 'spectrograms')
 
@@ -61,36 +66,3 @@ if __name__ == "__main__":
         print(f"El directorio {data_dir} existe.")
         # Entrenar el modelo
         train_model(data_dir=data_dir)
-
-
-
-#data_dir = 'Clasificador-Musical/dataset/spectrograms'  # Cambia esto si tu ruta es diferente
-# train_model(data_dir=data_dir)
-
-# # Ruta a los espectrogramas
-# data_dir = 'dataset/spectrograms'
-#
-# # Configuración del generador de datos
-# datagen = ImageDataGenerator(validation_split=0.2, rescale=1./255)
-# train_generator = datagen.flow_from_directory(
-#     data_dir,
-#     target_size=(128, 128),
-#     batch_size=32,
-#     class_mode='sparse',
-#     subset='training'
-# )
-# validation_generator = datagen.flow_from_directory(
-#     data_dir,
-#     target_size=(128, 128),
-#     batch_size=32,
-#     class_mode='sparse',
-#     subset='validation'
-# )
-#
-# # Crear y entrenar el modelo
-# model = create_cnn_model(input_shape=(128, 128, 3), num_classes=len(train_generator.class_indices))
-# history = model.fit(train_generator, validation_data=validation_generator, epochs=10)
-#
-# # Guardar el modelo entrenado
-# model.save('cnn_model/music_genre_classifier.h5')
-
